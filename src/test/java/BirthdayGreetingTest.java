@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -36,7 +35,7 @@ public class BirthdayGreetingTest {
         var recipientContact = new Contact( "Steve", "Barnett", LocalDate.parse( "1998-11-30" ), "ka@localtest.com" );
         var senderContact = new Contact( "Steve", "Barnett", LocalDate.parse( "1998-11-30" ), "ka@localtest.com" );
         var sendService = new SendByEmailService();
-        var message = new WishHappyBirthdayService( sendService).send( recipientContact, senderContact );
-        assertThat( message ).isEqualTo( "Happy birthday sent" );
+        var message = new WishHappyBirthdayService( sendService).sendHappyBirthday( recipientContact, senderContact );
+        assertThat( message ).isEqualTo( "Email sent successfully" );
     }
 }

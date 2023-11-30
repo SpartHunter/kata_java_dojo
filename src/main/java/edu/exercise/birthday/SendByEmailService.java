@@ -21,7 +21,7 @@ public class SendByEmailService implements SendService {
     private static final String MESSAGE_TO_SEND_FOR_REMINDER = "Dear %s, \n Today is %s birthday. Don't forget to send them a message !";
 
     @Override
-    public String sendToSingleContact ( Contact to, Contact from ) {
+    public String sendHappyBirthday ( Contact to, Contact from ) {
         try {
             Message message = new MimeMessage(this.setSession());
             message.setFrom( new InternetAddress(from.email(), from.firstname()) );
